@@ -17,7 +17,6 @@ void setup()
 
 void loop()
 {
-
   DynamicJsonDocument doc(200);
   char json[200];
 
