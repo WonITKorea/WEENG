@@ -5,7 +5,7 @@ const int buzzerPin = 2; // Buzzer Pin Set
 const int relayPin = 3;  // Relay Pin Set for LED ON/OFF
 int buzzerState = 0;
 int relayState = 0;
-const int InputPin = 4;
+const int inputPin = 4;
 void buzz();
 
 void setup()
