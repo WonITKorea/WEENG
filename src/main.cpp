@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
 
-const int BuzzerPin = 2; // Buzzer Pin Set
-const int RelayPin = 3;  // Relay Pin Set for LED ON/OFF
+const int buzzerPin = 2; // Buzzer Pin Set
+const int relayPin = 3;  // Relay Pin Set for LED ON/OFF
 int buzzerState = 0;
 int relayState = 0;
 const int InputPin = 4;
@@ -44,10 +44,21 @@ void loop()
   Serial.print(sensor);
   Serial.println("Active: ");
   Serial.print(State, 1);
+  if (sensor == buzzer) {
+    if (State == 1) {
+      buzz();
+    }
+    else if (State == 0) {
+      noTone(buzzerPin);
+    }
+  }
   delay(3000);
 }
 
-void buzz()
+void buzz() // Buzzer Tone adjustment
 {
-
+ tone(buzzerPin, 1000); // Send 1KHz sound signal...
+  delay(1000);        // ...for 1 sec
+  noTone(buzzerPin);     // Stop sound...
+  delay(1000);        // ...for 1sec
 }
