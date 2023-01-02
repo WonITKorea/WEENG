@@ -10,8 +10,8 @@ void buzz();
 
 void setup()
 {
-  pinMode(BuzzerPin, OUTPUT);
-  pinMode(RelayPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(relayPin, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -20,7 +20,6 @@ void loop()
 
   DynamicJsonDocument doc(200);
   char json[200];
-  json[] = Serial.readString();
 
   // Deserialize the JSON document
   DeserializationError error = deserializeJson(doc, json);
@@ -44,11 +43,14 @@ void loop()
   Serial.print(sensor);
   Serial.println("Active: ");
   Serial.print(State, 1);
-  if (sensor == buzzer) {
-    if (State == 1) {
+  if (sensor == "buzzer")
+  {
+    if (State == 1)
+    {
       buzz();
     }
-    else if (State == 0) {
+    else if (State == 0)
+    {
       noTone(buzzerPin);
     }
   }
@@ -57,8 +59,8 @@ void loop()
 
 void buzz() // Buzzer Tone adjustment
 {
- tone(buzzerPin, 1000); // Send 1KHz sound signal...
-  delay(1000);        // ...for 1 sec
+  tone(buzzerPin, 1000); // Send 1KHz sound signal...
+  delay(1000);           // ...for 1 sec
   noTone(buzzerPin);     // Stop sound...
-  delay(1000);        // ...for 1sec
+  delay(1000);           // ...for 1sec
 }
