@@ -6,6 +6,7 @@ const int RelayPin = 3;  // Relay Pin Set for LED ON/OFF
 int buzzerState = 0;
 int relayState = 0;
 const int InputPin = 4;
+void buzz();
 
 void setup()
 {
@@ -44,4 +45,9 @@ void loop()
   Serial.println("Active: ");
   Serial.print(State, 1);
   delay(3000);
+}
+
+void buzz()
+{
+
 }
