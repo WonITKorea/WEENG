@@ -1,0 +1,6 @@
+{
+    "configuration": "usbstack=arduino,debug=off,sercom4=include",
+    "board": "Seeeduino:samd:seeed_XIAO_m0",
+    "programmer": "adafruit_atmel_ice",
+    "sketch": "src\\espcombined copy.ino"
+}
