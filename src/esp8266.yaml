@@ -1,4 +1,4 @@
-esphome:
+	esphome:
     name: test_arduino
     includes:
       - arduino_port_expander.h
